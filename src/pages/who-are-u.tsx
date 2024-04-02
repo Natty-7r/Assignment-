@@ -1,7 +1,6 @@
 import OptionCard from "@/components/card/option.card";
 import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
-
 const WhoAreYouPage = () => {
   return (
     <main className="p-12 ">
