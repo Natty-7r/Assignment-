@@ -10,11 +10,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<UserTypePage />} />
-      <Route path="/select-interest" element={<InterestsPage />} />
-      <Route path="/after-interest" element={<ProgressOne />} />
-      <Route path="/select-math-level" element={<MathLevelPage />} />
-      <Route path="/after-math-level" element={<ProgressTwoPage />} />
-      <Route path="/finished" element={<LearningPathPage />} />
+      <Route path="/interest" element={<InterestsPage />} />
+      <Route path="/progress-one" element={<ProgressOne />} />
+      <Route path="/math-level" element={<MathLevelPage />} />
+      <Route path="/progress-two" element={<ProgressTwoPage />} />
+      <Route path="/learning-path" element={<LearningPathPage />} />
     </Routes>
   );
 }

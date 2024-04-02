@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-const CircularLoader = ({ className }: { className?: string }) => {
+const CircularLoader = ({ className }: ClassNameProps) => {
   return (
     <div
       className={cn(

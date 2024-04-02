@@ -16,8 +16,8 @@ const UserTypePage = () => {
   };
   const navigate = useNavigate();
   const moveToNext = () => {
-    setStep("select-interest");
-    navigate("/select-interest");
+    setStep("interest");
+    navigate("/interest");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">

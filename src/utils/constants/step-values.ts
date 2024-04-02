@@ -41,7 +41,7 @@ export const interestList: Interest[] = [
   { type: "domething else ", iconString: "/icons/interesets/eyes.png" },
 ];
 
-export const mathLevels: any[] = [
+export const mathLevels: MathLevelType[] = [
   {
     name: "arithmetic",
     description: "introuductory",
@@ -60,7 +60,25 @@ export const mathLevels: any[] = [
   {
     name: "caculus",
     description: "advanced",
-    // previewText : ` "4 X 1/2 =  ?",`,
     preview: getMathimaticalExpressions("caculus"),
+  },
+];
+
+export const learningpaths: LearningPath[] = [
+  {
+    id: "#11111",
+    lable: "most popular",
+    headerText: "foundation math",
+    headerDescription:
+      "build your foundationsl skills in algebra, geometry, and probability.",
+
+    imageSrc: "/icons/math.png",
+  },
+  {
+    id: "#22222",
+    headerText: "mathemacical thinking",
+    headerDescription:
+      "build your foundationsl skills in algebra, geometry, and probability.",
+    imageSrc: "/icons/math.png",
   },
 ];

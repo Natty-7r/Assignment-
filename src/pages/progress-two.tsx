@@ -8,8 +8,8 @@ const ProgressTwoPage = () => {
   const navigate = useNavigate();
   const appState = useContext(AppContenxt);
   const moveToNext = () => {
-    if (appState?.setStep) appState.setStep("finished");
-    navigate("/finished");
+    if (appState?.setStep) appState.setStep("learning-path");
+    navigate("/learning-path");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">

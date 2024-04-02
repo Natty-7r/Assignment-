@@ -17,8 +17,8 @@ const MathLevelPage = () => {
   };
   const navigate = useNavigate();
   const moveToNext = () => {
-    setStep("after-math-level");
-    navigate("/after-math-level");
+    setStep("progress-two");
+    navigate("/progress-two");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">

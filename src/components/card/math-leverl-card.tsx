@@ -7,13 +7,7 @@ const MathLevelCard = ({
   preview,
   handleClick,
   selectedValue,
-}: {
-  name: string;
-  description: string;
-  preview: string;
-  handleClick: Function;
-  selectedValue?: string;
-}) => {
+}: MathLevelCardProps) => {
   return (
     <Card
       className={cn(

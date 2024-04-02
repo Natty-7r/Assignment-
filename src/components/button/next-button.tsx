@@ -5,11 +5,7 @@ const NextButton = ({
   btnText = "Continue",
   onClickHandler,
   disabled,
-}: {
-  btnText?: string;
-  onClickHandler: () => void;
-  disabled: boolean;
-}) => {
+}: NextButtonProps) => {
   return (
     <Button
       disabled={disabled}

@@ -3,12 +3,12 @@ type MathLevel = "level1" | "level2" | "level3" | "level4" | "";
 type Action = "USERTYPE" | "INTERESET" | "MATHLEVEL" | "STEP";
 
 type Step =
-  | "select-user"
-  | "select-interest"
-  | "after-interest"
-  | "select-math-level"
-  | "after-math-level"
-  | "finished";
+  | "user"
+  | "interest"
+  | "progress-one"
+  | "math-level"
+  | "progress-two"
+  | "learning-path";
 
 type ActionType = { type: Action; payload: string | MathLevel | Step };
 

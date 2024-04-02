@@ -13,14 +13,13 @@ const InterestsPage = () => {
   const { setStep, selectIntereset, intereset } = useContext(AppContenxt);
 
   const handleSelection = (intereset: string) => {
-    setStep("after-interest");
     selectIntereset(intereset);
     setSelectionIndicator(true);
   };
 
   const moveToNext = () => {
-    setStep("after-interest");
-    navigate("/after-interest");
+    setStep("progress-one");
+    navigate("/progress-one");
   };
 
   return (

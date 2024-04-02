@@ -9,15 +9,7 @@ const LearnPathCard = ({
   imageSrc,
   headerText,
   headerDescription,
-}: {
-  clickHandler: Function;
-  selctedId?: string;
-  id: string;
-  imageSrc?: string;
-  lable?: string;
-  headerText?: string;
-  headerDescription?: string;
-}) => {
+}: LearnPathCardProps) => {
   return (
     <Card
       className={cn(

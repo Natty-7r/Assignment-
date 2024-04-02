@@ -9,8 +9,8 @@ const ProgressOne = () => {
   const { setStep } = useContext(AppContenxt);
 
   const moveToNext = () => {
-    setStep("select-math-level");
-    navigate("/select-math-level");
+    setStep("math-level");
+    navigate("/math-level");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">

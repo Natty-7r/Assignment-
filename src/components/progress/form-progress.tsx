@@ -4,12 +4,12 @@ import { ChevronLeft } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-const FormProgress = ({ className }: { className?: string }) => {
+const FormProgress = ({ className }: ClassNameProps) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const stepPercent = useMemo(() => {
-    if (location.pathname == "/") return convertStepToPercent("select-user");
+    if (location.pathname == "/") return convertStepToPercent("user");
     return convertStepToPercent(location.pathname as Step);
   }, [location.pathname]);
 
@@ -41,16 +41,17 @@ const convertStepToPercent = (step: Step | undefined): number => {
       return 0;
     case null:
       return 0;
-    case "select-user":
-      return 20;
-    case "select-interest":
-      return 40;
-    case "after-interest":
+    case "user":
+      return 15;
+    case "interest":
+      return 30;
+    case "progress-one":
+      return 45;
+    case "math-level":
       return 60;
-    case "select-math-level":
-      return 80;
-    case "after-math-level":
+    case "progress-two":
       return 100;
+
     default:
       return 50;
   }

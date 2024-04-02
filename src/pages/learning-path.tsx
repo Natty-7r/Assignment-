@@ -1,6 +1,7 @@
 import LearnPathCard from "@/components/card/learning-path-card";
 import FormHeader from "@/components/header/form-header";
 import CircularLoader from "@/components/loader/circular-loader";
+import { learningpaths } from "@/utils/constants/step-values";
 import { useEffect, useState } from "react";
 
 const LearningPathPage = () => {
@@ -53,22 +54,4 @@ const LearningPathPage = () => {
   );
 };
 
-const learningpaths: any[] = [
-  {
-    id: "#11111",
-    lable: "most popular",
-    headerText: "foundation math",
-    headerDescription:
-      "build your foundationsl skills in algebra, geometry, and probability.",
-
-    imageSrc: "/icons/math.png",
-  },
-  {
-    id: "#22222",
-    headerText: "mathemacical thinking",
-    headerDescription:
-      "build your foundationsl skills in algebra, geometry, and probability.",
-    imageSrc: "/icons/math.png",
-  },
-];
 export default LearningPathPage;
