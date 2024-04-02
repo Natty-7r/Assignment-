@@ -3,7 +3,7 @@ import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { userTypes } from "@/utils/constants/userTypes";
+import { userTypes } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";

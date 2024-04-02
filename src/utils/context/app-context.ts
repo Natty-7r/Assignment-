@@ -28,7 +28,7 @@ export const reducer = (
     case INTERESET:
       return {
         ...state,
-        intereset: "namaer",
+        intereset: payload,
       };
     case USERTYPE:
       return {

@@ -3,15 +3,15 @@ import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { userTypes } from "@/utils/constants/userTypes";
+import { interestList } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
 
 const InterestsPage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
-  const AppState = useContext(AppContenxt);
-  const selectUser = (userType: string) => {
-    if (AppState?.selectIntereset) AppState.selectIntereset(userType);
+  const appState = useContext(AppContenxt);
+  const selectUser = (intereset: string) => {
+    if (appState?.selectIntereset) appState.selectIntereset(intereset);
     setSelectionIndicator(true);
   };
   return (
@@ -19,18 +19,17 @@ const InterestsPage = () => {
       <FormProgress />
       <FormHeader
         headerText=" which are you most intereseted in?"
-        headerDescription=" choose just one. This will help us get you started(but won't limit your experience)."
+        headerDescription=" choose just one. This will help us get you started   (but won't limit your experience)."
       />
 
       <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-3 mb-6 mt-6  md:mt-8 sm:w-4/5 lg:w-3/5 max-h-[50vh] md:max-h-[62vh]">
-        {userTypes.map(({ type, description, iconString }, index: number) => (
+        {interestList.map(({ type, iconString }, index: number) => (
           <OptionCard
             key={index}
             title={type}
-            description={description}
             iconString={iconString}
             handleClick={selectUser}
-            selectedValue={AppState?.intereset}
+            selectedValue={appState?.intereset}
           />
         ))}
       </div>

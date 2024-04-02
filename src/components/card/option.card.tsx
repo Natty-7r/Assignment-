@@ -22,7 +22,7 @@ const OptionCard = ({
           className="absolute top-0 left-0 w-full h-full"
         />
       </div>
-      <p className="capitalize font-">
+      <p className="first-letter:capitalize tracking-wide">
         {title}
         {description && (
           <span className="pl-2 lowercase font-normal text-gray-400">
