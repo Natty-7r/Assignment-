@@ -1,24 +1,34 @@
+import { cn } from "@/lib/utils";
 import { Card } from "../ui/card";
 
-const OptionCard = ({}: {
-  Icon?: React.ComponentType<React.ComponentProps<any>>;
-  title?: string;
-  description?: string;
-}) => {
+const OptionCard = ({
+  handleClick,
+  iconString,
+  title,
+  selectedValue,
+  description,
+}: OptionCardProps) => {
   return (
-    <Card className="flex items-center gap-6 p-5 py-6 my-2 shadow-none rounded-sm border-gray-100 ">
+    <Card
+      className={cn(
+        "flex items-center  rounded gap-4  p-4 md:gap-6 md:p-5 border-gray-100 ",
+        selectedValue && selectedValue == title && "border-yellow-600 shadow-lg"
+      )}
+      onClick={() => handleClick(title)}
+    >
       <div className="relative aspect-square h-6   ">
         <img
-          src="/icons/student.svg"
+          src={iconString || "/icons/student.svg"}
           className="absolute top-0 left-0 w-full h-full"
         />
       </div>
-      <p className="capitalize font-medium">
-        Student{" "}
-        <span className="lowercase font-normal text-gray-400">
-          {" "}
-          or soon be enrolled
-        </span>
+      <p className="capitalize font-">
+        {title}
+        {description && (
+          <span className="pl-2 lowercase font-normal text-gray-400">
+            {description}
+          </span>
+        )}
       </p>
     </Card>
   );
