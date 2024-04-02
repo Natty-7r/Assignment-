@@ -4,7 +4,6 @@ import { AppContenxt } from "@/utils/context/app-context";
 
 const FormProgress = () => {
   const appState = useContext(AppContenxt);
-  console.log(appState?.step);
   const stepPercent = useMemo(() => {
     return convertStepToPercent(appState?.step);
   }, [appState?.step]);
