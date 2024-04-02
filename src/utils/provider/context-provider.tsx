@@ -6,15 +6,15 @@ import {
   actions,
 } from "../context/app-context";
 
-const { USERTYPE, INTERESET, MATHLEVEL } = actions;
+const { USERTYPE, INTERESET, MATHLEVEL, STEP } = actions;
 
 const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const setStep = useCallback((userType: Step) => {
+  const setStep = useCallback((step: Step) => {
     dispatch({
-      type: USERTYPE,
-      payload: userType,
+      type: STEP,
+      payload: step,
     });
   }, []);
   const selectUser = useCallback((userType: string) => {

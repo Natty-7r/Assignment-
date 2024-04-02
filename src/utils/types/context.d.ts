@@ -22,7 +22,7 @@ type AppStateType =
       selectIntereset?: (intereset: string) => void;
       selectUser?: (userType: string) => void;
       selectMathLevel?: (mathLevel: MathLevel) => void;
-      setStep?: (mathLevel: Step) => void;
+      setStep?: (step: Step) => void;
     }
   | undefined
   | null;

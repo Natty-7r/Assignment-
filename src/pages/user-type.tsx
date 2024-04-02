@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { userTypes } from "@/utils/constants/userTypes";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserTypePage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
@@ -13,6 +14,11 @@ const UserTypePage = () => {
   const selectUser = (userType: string) => {
     if (AppState?.selectUser) AppState.selectUser(userType);
     setSelectionIndicator(true);
+  };
+  const navigate = useNavigate();
+  const moveToNext = () => {
+    if (AppState?.setStep) AppState?.setStep("select-interest");
+    navigate("intereset");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">
@@ -41,8 +47,8 @@ const UserTypePage = () => {
           !optionSeleced && "opacity-0"
         )}
         size={"lg"}
+        onClick={moveToNext}
       >
-        {" "}
         Contitue
       </Button>
     </main>
