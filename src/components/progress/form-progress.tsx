@@ -1,18 +1,31 @@
 import { useContext, useMemo } from "react";
 import { Progress } from "../ui/progress";
 import { AppContenxt } from "@/utils/context/app-context";
+import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FormProgress = () => {
   const appState = useContext(AppContenxt);
   const stepPercent = useMemo(() => {
     return convertStepToPercent(appState?.step);
   }, [appState?.step]);
+
+  const navigate = useNavigate();
   return (
-    <Progress
-      className="my-4 h-1 text-slate-100"
-      value={stepPercent}
-      color="red"
-    />
+    <div className="flex items-center gap-2">
+      {stepPercent > 20 && (
+        <ChevronLeft
+          onClick={() => {
+            navigate(-1);
+          }}
+        />
+      )}
+      <Progress
+        className="my-4 h-1 text-slate-100"
+        value={stepPercent}
+        color="red"
+      />
+    </div>
   );
 };
 

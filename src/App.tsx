@@ -1,10 +1,11 @@
-import WhoAreYouPage from "./pages/who-are-u";
+import { Route, Routes } from "react-router-dom";
+import UserTypePage from "./pages/user-type";
 
 function App() {
   return (
-    <>
-      <WhoAreYouPage />
-    </>
+    <Routes>
+      <Route path="/" element={UserTypePage()} />
+    </Routes>
   );
 }
 
