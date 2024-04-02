@@ -1,7 +1,9 @@
+import WhoAreYouPage from "./pages/who-are-u";
+
 function App() {
   return (
     <>
-      <div>Project init</div>
+      <WhoAreYouPage />
     </>
   );
 }
