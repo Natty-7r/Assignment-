@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const ProgressOne = () => {
   const navigate = useNavigate();
-  const appState = useContext(AppContenxt);
+  const { setStep } = useContext(AppContenxt);
+
   const moveToNext = () => {
-    if (appState?.setStep) appState.setStep("select-math-level");
+    setStep("select-math-level");
     navigate("/select-math-level");
   };
   return (

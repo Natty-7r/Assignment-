@@ -12,17 +12,14 @@ type Step =
 
 type ActionType = { type: Action; payload: string | MathLevel | Step };
 
-type AppStateType =
-  | {
-      userType?: string;
-      intereset?: string;
-      mathLevel?: MathLevel;
-      step?: Step;
+type AppStateType = {
+  userType: string;
+  intereset: string;
+  mathLevel: MathLevel;
+  step: Step;
 
-      selectIntereset?: (intereset: string) => void;
-      selectUser?: (userType: string) => void;
-      selectMathLevel?: (mathLevel: MathLevel) => void;
-      setStep?: (step: Step) => void;
-    }
-  | undefined
-  | null;
+  selectIntereset: (intereset: string) => void;
+  selectUser: (userType: string) => void;
+  selectMathLevel: (mathLevel: MathLevel) => void;
+  setStep: (step: Step) => void;
+};

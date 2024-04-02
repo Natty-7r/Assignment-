@@ -10,17 +10,19 @@ import { useNavigate } from "react-router-dom";
 const InterestsPage = () => {
   const navigate = useNavigate();
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
-  const appState = useContext(AppContenxt);
-  const selectUser = (intereset: string) => {
-    if (appState?.setStep) appState.setStep("after-interest");
-    if (appState?.selectIntereset) appState.selectIntereset(intereset);
+  const { setStep, selectIntereset, intereset } = useContext(AppContenxt);
+
+  const handleSelection = (intereset: string) => {
+    setStep("after-interest");
+    selectIntereset(intereset);
     setSelectionIndicator(true);
   };
 
   const moveToNext = () => {
-    if (appState?.setStep) appState?.setStep("after-interest");
+    setStep("after-interest");
     navigate("/after-interest");
   };
+
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">
       <FormProgress />
@@ -35,16 +37,15 @@ const InterestsPage = () => {
             key={index}
             title={type}
             iconString={iconString}
-            handleClick={selectUser}
-            selectedValue={appState?.intereset}
+            handleClick={handleSelection}
+            selectedValue={intereset}
           />
         ))}
       </div>
 
       <NextButton
         disabled={
-          appState?.intereset?.trim() == "" ||
-          (!optionSeleced && appState?.intereset?.trim() == "")
+          intereset?.trim() == "" || (!optionSeleced && intereset?.trim() == "")
         }
         onClickHandler={moveToNext}
       />

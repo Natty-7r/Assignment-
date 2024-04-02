@@ -16,6 +16,10 @@ export const initialState: AppStateType = {
   intereset: "",
   mathLevel: "",
   step: "select-user",
+  selectIntereset: (_) => {},
+  selectMathLevel: (_) => {},
+  setStep: (_) => {},
+  selectUser: (_) => {},
 };
 
 // Reducer

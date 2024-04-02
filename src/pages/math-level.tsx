@@ -2,21 +2,22 @@ import NextButton from "@/components/button/next-button";
 import MathLevelCard from "@/components/card/math-leverl-card";
 import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
-import { mathLevel } from "@/utils/constants/step-values";
+import { mathLevels } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MathLevelPage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
-  const appState = useContext(AppContenxt);
-  const selectUser = (mathLevel: MathLevel) => {
-    if (appState?.selectMathLevel) appState.selectMathLevel(mathLevel);
+  const { setStep, selectMathLevel, mathLevel } = useContext(AppContenxt);
+
+  const handleSelection = (mathLevel: MathLevel) => {
+    selectMathLevel(mathLevel);
     setSelectionIndicator(true);
   };
   const navigate = useNavigate();
   const moveToNext = () => {
-    if (appState?.setStep) appState?.setStep("after-math-level");
+    setStep("after-math-level");
     navigate("/after-math-level");
   };
   return (
@@ -29,24 +30,21 @@ const MathLevelPage = () => {
       />
 
       <div className="flex   mx-auto flex-wrap justify-around overflow-y-auto hideable_thin_scrollbar gap-2 mb-6 mt-6  md:mt-12 sm:w-4/5 lg:w-4/5 max-h-[55vh] md:max-h-[62vh]">
-        {mathLevel
-          .slice(0, 4)
-          .map(({ name, description, preview }, index: number) => (
-            <MathLevelCard
-              key={index}
-              name={name}
-              description={description}
-              preview={preview}
-              handleClick={selectUser}
-              selectedValue={appState?.mathLevel}
-            />
-          ))}
+        {mathLevels.map(({ name, description, preview }, index: number) => (
+          <MathLevelCard
+            key={index}
+            name={name}
+            description={description}
+            preview={preview}
+            handleClick={handleSelection}
+            selectedValue={mathLevel}
+          />
+        ))}
       </div>
 
       <NextButton
         disabled={
-          appState?.mathLevel?.trim() == "" ||
-          (!optionSeleced && appState?.mathLevel?.trim() == "")
+          mathLevel?.trim() == "" || (!optionSeleced && mathLevel?.trim() == "")
         }
         onClickHandler={moveToNext}
       />

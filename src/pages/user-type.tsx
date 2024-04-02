@@ -9,14 +9,14 @@ import { useNavigate } from "react-router-dom";
 
 const UserTypePage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
-  const appState = useContext(AppContenxt);
-  const selectUser = (userType: string) => {
-    if (appState?.selectUser) appState.selectUser(userType);
+  const { selectUser, userType, setStep } = useContext(AppContenxt);
+  const handleSelection = (userType: string) => {
+    selectUser(userType);
     setSelectionIndicator(true);
   };
   const navigate = useNavigate();
   const moveToNext = () => {
-    if (appState?.setStep) appState?.setStep("select-interest");
+    setStep("select-interest");
     navigate("/select-interest");
   };
   return (
@@ -34,15 +34,14 @@ const UserTypePage = () => {
             title={type}
             description={description}
             iconString={iconString}
-            handleClick={selectUser}
-            selectedValue={appState?.userType}
+            handleClick={handleSelection}
+            selectedValue={userType}
           />
         ))}
       </div>
       <NextButton
         disabled={
-          appState?.userType?.trim() == "" ||
-          (!optionSeleced && appState?.userType?.trim() == "")
+          userType?.trim() == "" || (!optionSeleced && userType?.trim() == "")
         }
         onClickHandler={moveToNext}
       />
