@@ -8,19 +8,21 @@ type Step =
   | "after-interest"
   | "select-math-level"
   | "after-math-level"
-  | "finished"
-  | null;
+  | "finished";
 
 type ActionType = { type: Action; payload: string | MathLevel | Step };
 
-type AppStateType = {
-  userType?: string | null;
-  intereset?: string | null;
-  mathLevel?: MathLevel | null;
-  step?: Step;
+type AppStateType =
+  | {
+      userType?: string;
+      intereset?: string;
+      mathLevel?: MathLevel;
+      step?: Step;
 
-  selectIntereset?: (intereset: string) => void;
-  selectUser?: (userType: string) => void;
-  selectMathLevel?: (mathLevel: MathLevel) => void;
-  setStep?: (mathLevel: Step) => void;
-} | null;
+      selectIntereset?: (intereset: string) => void;
+      selectUser?: (userType: string) => void;
+      selectMathLevel?: (mathLevel: MathLevel) => void;
+      setStep?: (mathLevel: Step) => void;
+    }
+  | undefined
+  | null;

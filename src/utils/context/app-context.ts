@@ -12,35 +12,38 @@ const { USERTYPE, INTERESET, MATHLEVEL, STEP } = actions;
 
 // Initial Value
 export const initialState: AppStateType = {
-  userType: null,
-  intereset: null,
-  mathLevel: null,
-  step: null,
+  userType: "",
+  intereset: "",
+  mathLevel: "level1",
+  step: "select-user",
 };
 
 // Reducer
-export const reducer = (state: any, action: ActionType): AppStateType => {
+export const reducer = (
+  state: AppStateType,
+  action: ActionType
+): AppStateType => {
   const { type, payload } = action;
   switch (type) {
     case INTERESET:
       return {
         ...state,
-        intereset: payload,
+        intereset: "namaer",
       };
     case USERTYPE:
       return {
         ...state,
-        userType: payload,
+        userType: payload as string,
       };
     case MATHLEVEL:
       return {
         ...state,
-        mathLevel: payload,
+        mathLevel: payload as MathLevel,
       };
     case STEP:
       return {
         ...state,
-        step: payload,
+        step: payload as Step,
       };
     default:
       return state;
