@@ -1,8 +1,7 @@
+import NextButton from "@/components/button/next-button";
 import OptionCard from "@/components/card/option.card";
 import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { userTypes } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
@@ -10,14 +9,14 @@ import { useNavigate } from "react-router-dom";
 
 const UserTypePage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
-  const AppState = useContext(AppContenxt);
+  const appState = useContext(AppContenxt);
   const selectUser = (userType: string) => {
-    if (AppState?.selectUser) AppState.selectUser(userType);
+    if (appState?.selectUser) appState.selectUser(userType);
     setSelectionIndicator(true);
   };
   const navigate = useNavigate();
   const moveToNext = () => {
-    if (AppState?.setStep) AppState?.setStep("select-interest");
+    if (appState?.setStep) appState?.setStep("select-interest");
     navigate("/select-interest");
   };
   return (
@@ -36,21 +35,17 @@ const UserTypePage = () => {
             description={description}
             iconString={iconString}
             handleClick={selectUser}
-            selectedValue={AppState?.userType}
+            selectedValue={appState?.userType}
           />
         ))}
       </div>
-      <Button
-        disabled={!optionSeleced}
-        className={cn(
-          "w-fit mx-auto capitalize px-12 text-lg ",
-          !optionSeleced && "opacity-0"
-        )}
-        size={"lg"}
-        onClick={moveToNext}
-      >
-        Contitue
-      </Button>
+      <NextButton
+        disabled={
+          appState?.userType?.trim() == "" ||
+          (!optionSeleced && appState?.userType?.trim() == "")
+        }
+        onClickHandler={moveToNext}
+      />
     </main>
   );
 };

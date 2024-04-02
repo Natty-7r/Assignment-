@@ -2,8 +2,9 @@ import { useMemo } from "react";
 import { Progress } from "../ui/progress";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
-const FormProgress = () => {
+const FormProgress = ({ className }: { className?: string }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,7 +14,7 @@ const FormProgress = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex items-center gap-2">
+    <div className={cn("flex items-center gap-2", className)}>
       {stepPercent > 20 && location.pathname != "/" && (
         <ChevronLeft
           onClick={() => {

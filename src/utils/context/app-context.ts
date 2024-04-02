@@ -14,7 +14,7 @@ const { USERTYPE, INTERESET, MATHLEVEL, STEP } = actions;
 export const initialState: AppStateType = {
   userType: "",
   intereset: "",
-  mathLevel: "level1",
+  mathLevel: "",
   step: "select-user",
 };
 

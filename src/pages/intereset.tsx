@@ -1,18 +1,25 @@
+import NextButton from "@/components/button/next-button";
 import OptionCard from "@/components/card/option.card";
 import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { interestList } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const InterestsPage = () => {
+  const navigate = useNavigate();
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
   const appState = useContext(AppContenxt);
   const selectUser = (intereset: string) => {
+    if (appState?.setStep) appState.setStep("after-interest");
     if (appState?.selectIntereset) appState.selectIntereset(intereset);
     setSelectionIndicator(true);
+  };
+
+  const moveToNext = () => {
+    if (appState?.setStep) appState?.setStep("after-interest");
+    navigate("/after-interest");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">
@@ -33,17 +40,14 @@ const InterestsPage = () => {
           />
         ))}
       </div>
-      <Button
-        disabled={!optionSeleced}
-        className={cn(
-          "w-fit mx-auto capitalize px-12 text-lg ",
-          !optionSeleced && "opacity-0"
-        )}
-        size={"lg"}
-      >
-        {" "}
-        Contitue
-      </Button>
+
+      <NextButton
+        disabled={
+          appState?.intereset?.trim() == "" ||
+          (!optionSeleced && appState?.intereset?.trim() == "")
+        }
+        onClickHandler={moveToNext}
+      />
     </main>
   );
 };

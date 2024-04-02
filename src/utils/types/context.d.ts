@@ -1,4 +1,4 @@
-type MathLevel = "level1" | "level2" | "level3" | "level4";
+type MathLevel = "level1" | "level2" | "level3" | "level4" | "";
 
 type Action = "USERTYPE" | "INTERESET" | "MATHLEVEL" | "STEP";
 
