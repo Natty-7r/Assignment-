@@ -1,17 +1,17 @@
-import { useContext, useMemo } from "react";
+import { useMemo } from "react";
 import { Progress } from "../ui/progress";
-import { AppContenxt } from "@/utils/context/app-context";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const FormProgress = () => {
-  const appState = useContext(AppContenxt);
-  const stepPercent = useMemo(() => {
-    return convertStepToPercent(appState?.step);
-  }, [appState?.step]);
-
   const navigate = useNavigate();
   const location = useLocation();
+
+  const stepPercent = useMemo(() => {
+    if (location.pathname == "/") return convertStepToPercent("select-user");
+    return convertStepToPercent(location.pathname as Step);
+  }, [location.pathname]);
+
   return (
     <div className="flex items-center gap-2">
       {stepPercent > 20 && location.pathname != "/" && (
@@ -33,7 +33,9 @@ const FormProgress = () => {
 export default FormProgress;
 
 const convertStepToPercent = (step: Step | undefined): number => {
-  switch (step) {
+  let stepString = step;
+  if (step?.includes("/")) stepString = step.split("/")[1] as Step;
+  switch (stepString) {
     case undefined:
       return 0;
     case null:

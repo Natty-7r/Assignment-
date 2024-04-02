@@ -6,7 +6,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={UserTypePage()} />
-      <Route path="/intereset" element={InterestsPage()} />
+      <Route path="/select-interest" element={InterestsPage()} />
     </Routes>
   );
 }

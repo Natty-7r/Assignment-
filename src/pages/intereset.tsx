@@ -6,26 +6,20 @@ import { cn } from "@/lib/utils";
 import { userTypes } from "@/utils/constants/userTypes";
 import { AppContenxt } from "@/utils/context/app-context";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const UserTypePage = () => {
+const InterestsPage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
   const AppState = useContext(AppContenxt);
   const selectUser = (userType: string) => {
-    if (AppState?.selectUser) AppState.selectUser(userType);
+    if (AppState?.selectIntereset) AppState.selectIntereset(userType);
     setSelectionIndicator(true);
-  };
-  const navigate = useNavigate();
-  const moveToNext = () => {
-    if (AppState?.setStep) AppState?.setStep("select-interest");
-    navigate("/select-interest");
   };
   return (
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">
       <FormProgress />
       <FormHeader
-        headerText=" which describes you best?"
-        headerDescription=" this will help us personize your expreience."
+        headerText=" which are you most intereseted in?"
+        headerDescription=" choose just one. This will help us get you started(but won't limit your experience)."
       />
 
       <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-3 mb-6 mt-6  md:mt-8 sm:w-4/5 lg:w-3/5 max-h-[50vh] md:max-h-[62vh]">
@@ -36,7 +30,7 @@ const UserTypePage = () => {
             description={description}
             iconString={iconString}
             handleClick={selectUser}
-            selectedValue={AppState?.userType}
+            selectedValue={AppState?.intereset}
           />
         ))}
       </div>
@@ -47,12 +41,12 @@ const UserTypePage = () => {
           !optionSeleced && "opacity-0"
         )}
         size={"lg"}
-        onClick={moveToNext}
       >
+        {" "}
         Contitue
       </Button>
     </main>
   );
 };
 
-export default UserTypePage;
+export default InterestsPage;
