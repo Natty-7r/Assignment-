@@ -16,14 +16,14 @@ const ProgressOne = () => {
     <main className=" flex flex-col gap-2 p-8 md:px-[15%] ">
       <FormProgress />
 
-      <div className="flex flex-col md:my-12 md:flex-row mx-auto items-center justify-around md:gap-[20%] ">
-        <div className="aspect-[2/3]  relative basis-[25%]">
+      <div className="flex flex-col my-8 md:my-12 md:flex-row mx-auto items-center justify-around md:gap-[20%] ">
+        <div className="aspect-[2/3]  relative  w-1/4 md:w-[25%] my-12">
           <img
             src="/icons/student.svg"
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </div>
-        <div className="basis-[45%] md:mt-12">
+        <div className="w-[90%] md:w-[45%] md:mt-12">
           <h1 className=" first-letter:uppercase font-bold tracking-wide md:mb-6  text-xl md:text-4xl">
             You're in the right place
           </h1>

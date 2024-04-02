@@ -17,7 +17,7 @@ export const interestList: Interest[] = [
   { type: "domething else ", iconString: "" },
 ];
 
-export const mathLevel: any[] = [
+export const mathLevels: any[] = [
   {
     name: "arithmetic",
     description: "introuductory",
