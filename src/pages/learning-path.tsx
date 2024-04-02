@@ -60,14 +60,15 @@ const learningpaths: any[] = [
     headerText: "foundation math",
     headerDescription:
       "build your foundationsl skills in algebra, geometry, and probability.",
-    imageSrc: "/icons/student.svg",
+
+    imageSrc: "/icons/math.png",
   },
   {
     id: "#22222",
     headerText: "mathemacical thinking",
     headerDescription:
       "build your foundationsl skills in algebra, geometry, and probability.",
-    imageSrc: "/icons/student.svg",
+    imageSrc: "/icons/math.png",
   },
 ];
 export default LearningPathPage;

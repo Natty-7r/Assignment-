@@ -16,7 +16,7 @@ const OptionCard = ({
       )}
       onClick={() => handleClick(title)}
     >
-      <div className="relative aspect-square h-6   ">
+      <div className="relative aspect-square h-6 md:h-7   ">
         <img
           src={iconString || "/icons/student.svg"}
           className="absolute top-0 left-0 w-full h-full"
