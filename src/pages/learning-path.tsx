@@ -18,7 +18,7 @@ const LearningPathPage = () => {
   }, []);
   if (loading)
     return (
-      <main className="  flex flex-col h-screen  justify-center items-center">
+      <main className="  flex flex-col h-screen   justify-center items-center">
         <CircularLoader className="w-12 h-11" />
         <h1 className=" font-bold text-xl first-letter:uppercase  my-6 px-[10%] text-center ">
           finding learning path recommendations for you based on your responses
@@ -26,7 +26,7 @@ const LearningPathPage = () => {
       </main>
     );
   return (
-    <main className=" flex flex-col gap-2 p-8 md:px-[18%] py-[20%] md:py-[10%] md:py-[5%]  ">
+    <main className=" flex flex-col gap-2 p-6 sm:p-12 sm:p-24  md:px-[10%] ">
       <FormHeader
         headerText=" learning paths based on your answers"
         headerDescription="choose one to get started. You can switch anytime."
