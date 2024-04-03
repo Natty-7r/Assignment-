@@ -13,7 +13,7 @@ const LearnPathCard = ({
   return (
     <Card
       className={cn(
-        "relative flex w-full lg:w-[45%]  items-center p-3 lg:px-4 lg:py-6",
+        "relative flex w-full lg:w-[45%]  items-center p-4  lg:px-4 lg:py-6",
         id && id == selctedId && "border-yellow-600 shadow-lg"
       )}
       onClick={() => clickHandler(id)}
@@ -24,7 +24,9 @@ const LearnPathCard = ({
         </p>
       )}
       <div className="w-3/4">
-        <h1 className=" capitalize font-bold  text-xl ">{headerText}</h1>
+        <h1 className=" capitalize font-bold text-lg sm:text-xl ">
+          {headerText}
+        </h1>
         <h4 className="first-letter:uppercase text-slate-700 text-sm mt-1 lg:text-base  ">
           {headerDescription}
         </h4>

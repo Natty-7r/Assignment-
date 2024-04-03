@@ -1,4 +1,4 @@
-import { getMathimaticalExpressions } from "../helper/level";
+import { getMathimaticalExpressions } from "./level";
 
 export const userTypes: Usertype[] = [
   {

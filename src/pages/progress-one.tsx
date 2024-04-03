@@ -22,11 +22,11 @@ const ProgressOne = () => {
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </div>
-        <div className="w-[90%] md:w-[45%] md:mt-12">
+        <div className="w-[90%] md:w-[45%] my-8 md:my-12">
           <h1 className=" first-letter:uppercase font-bold tracking-wide md:mb-6  text-xl md:text-4xl">
             You're in the right place
           </h1>
-          <h4 className="first-letter:uppercase md:text-lg text-slate-700 text-xs mt-2  md:text-lg ">
+          <h4 className="first-letter:uppercase md:text-lg text-slate-700 text-sm mt-2  md:text-lg ">
             brillint gets you hands-on to help impreove your professional skills
             and knowledge. You'll interact with concepts and solve fun problems
             in math , science, and computer science.
