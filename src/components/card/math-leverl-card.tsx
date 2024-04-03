@@ -11,7 +11,7 @@ const MathLevelCard = ({
   return (
     <Card
       className={cn(
-        "aspect-[1/1]   text-sm basis-[48%] sm:w-[24%] flex flex-col items-center justify-center",
+        "aspect-[1/1]   text-sm w-[48%] lg:w-[24%] flex flex-col items-center justify-center",
         selectedValue && selectedValue == name && "border-yellow-600 shadow-lg"
       )}
       onClick={() => handleClick(name)}
