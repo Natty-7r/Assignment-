@@ -20,7 +20,7 @@ const UserTypePage = () => {
     navigate("/interest");
   };
   return (
-    <main className=" flex flex-col gap-2 p-6 sm:p-12 md:p-8 md:px-[15%] ">
+    <main className=" flex flex-col gap-2 p- py-8 px-6 sm:p-12 md:p-8 md:px-[15%] ">
       <FormProgress />
       <FormHeader
         headerText=" which describes you best?"
