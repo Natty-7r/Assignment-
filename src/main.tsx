@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "../src/styles/globals.css";
 import "../src/styles/cutome-scrollbar.css";
+import "../src/styles/custome-styles.css";
 
 import ContextProvider from "./utils/provider/context-provider.tsx";
 import { BrowserRouter as Router } from "react-router-dom";
