@@ -9,7 +9,7 @@ const NextButton = ({
   return (
     <Button
       disabled={disabled}
-      className={cn("w-fit mx-auto capitalize px-12 text-lg ")}
+      className={cn("w-fit lg:mt-4 mx-auto capitalize px-12 text-lg ")}
       size={"lg"}
       onClick={onClickHandler}
     >
