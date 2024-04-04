@@ -4,13 +4,13 @@ import FormHeader from "@/components/header/form-header";
 import FormProgress from "@/components/progress/form-progress";
 import { mathLevels } from "@/utils/constants/step-values";
 import { AppContenxt } from "@/utils/context/app-context";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const MathLevelPage = () => {
   const [optionSeleced, setSelectionIndicator] = useState<boolean>(false);
   const { setStep, selectMathLevel, mathLevel } = useContext(AppContenxt);
-
+  const [r, setRelaod] = useState(false);
   const handleSelection = (mathLevel: MathLevel) => {
     selectMathLevel(mathLevel);
     setSelectionIndicator(true);
@@ -20,6 +20,10 @@ const MathLevelPage = () => {
     setStep("progress-two");
     navigate("/progress-two");
   };
+
+  useEffect(() => {
+    setRelaod(true);
+  }, [r]);
   return (
     <main className=" flex flex-col gap-2 p-6 sm:p-12 md:px-[15%] ">
       <FormProgress />
@@ -30,12 +34,12 @@ const MathLevelPage = () => {
       />
 
       <div className="flex   mx-auto flex-wrap justify-around overflow-y-auto hideable_thin_scrollbar gap-2 mb-6 mt-6  md:my-12 sm:w-4/5 lg:w-4/5 max-h-[55vh] md:max-h-[62vh]">
-        {mathLevels.map(({ name, description, preview }, index: number) => (
+        {mathLevels.map(({ name, description, formula }, index: number) => (
           <MathLevelCard
             key={index}
             name={name}
             description={description}
-            preview={preview}
+            formula={formula}
             handleClick={handleSelection}
             selectedValue={mathLevel}
           />

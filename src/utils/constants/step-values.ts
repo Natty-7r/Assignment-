@@ -1,4 +1,4 @@
-import { getMathimaticalExpressions } from "./level";
+import { getMathimaticalExpressions } from "./math-formula";
 
 export const userTypes: Usertype[] = [
   {
@@ -45,22 +45,22 @@ export const mathLevels: MathLevelType[] = [
   {
     name: "arithmetic",
     description: "introuductory",
-    preview: getMathimaticalExpressions("arithmetic"),
+    formula: getMathimaticalExpressions("arithmetic"),
   },
   {
     name: "basic algebra",
     description: "foundational",
-    preview: getMathimaticalExpressions("basic algebra"),
+    formula: getMathimaticalExpressions("basic algebra"),
   },
   {
     name: "intermediate algebra",
     description: "intermediate",
-    preview: getMathimaticalExpressions("intermediate algebra"),
+    formula: getMathimaticalExpressions("intermediate algebra"),
   },
   {
     name: "caculus",
     description: "advanced",
-    preview: getMathimaticalExpressions("caculus"),
+    formula: getMathimaticalExpressions("caculus"),
   },
 ];
 

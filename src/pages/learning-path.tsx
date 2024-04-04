@@ -26,12 +26,12 @@ const LearningPathPage = () => {
       </main>
     );
   return (
-    <main className=" flex flex-col gap-2 p-6 sm:p-12 sm:p-24  md:px-[10%] ">
+    <main className=" flex flex-col gap-2 p-6 sm:p-12 sm:p-24  md:px-[10%] lg:my-24 lg:justify-center ">
       <FormHeader
         headerText=" learning paths based on your answers"
         headerDescription="choose one to get started. You can switch anytime."
       />
-      <div className="flex gap-5 flex-col lg:flex-row my-12  lg:mx-auto lg:w-4/5">
+      <div className="flex gap-5 flex-col lg:flex-row my-12  lg:mx-auto lg:w-[70%]">
         {learningpaths.map(
           (
             { id, headerText, headerDescription, lable, imageSrc },
