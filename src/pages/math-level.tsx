@@ -33,7 +33,7 @@ const MathLevelPage = () => {
         headerDescription=" choose the highets level you feel confident in - you can always adjust later.."
       />
 
-      <div className="flex   mx-auto flex-wrap justify-around overflow-y-auto hideable_thin_scrollbar gap-2 mb-6 mt-6  md:my-12 sm:w-4/5 lg:w-4/5 max-h-[55vh] md:max-h-[62vh]">
+      <div className="flex   mx-auto flex-wrap justify-around overflow-y-auto hideable_thin_scrollbar gap-2 mb-6 mt-6  md:my-12 sm:w-4/5 lg:w-[85%] max-h-[55vh] md:max-h-[62vh]">
         {mathLevels.map(({ name, description, formula }, index: number) => (
           <MathLevelCard
             key={index}
