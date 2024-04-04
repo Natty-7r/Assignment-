@@ -16,7 +16,7 @@ const FormProgress = ({ className }: ClassNameProps) => {
   }, [location.pathname]);
 
   return (
-    <div className={cn("flex items-center gap-2", className)}>
+    <div className={cn("flex items-center gap-2 cursor-pointer", className)}>
       {stepPercent > 20 && location.pathname != "/" && (
         <ChevronLeft
           onClick={() => {

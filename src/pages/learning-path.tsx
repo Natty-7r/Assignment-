@@ -26,7 +26,7 @@ const LearningPathPage = () => {
       </main>
     );
   return (
-    <main className=" flex flex-col gap-2 px-6 pt-20 sm:p-12 sm:p-24  md:px-[10%] lg:my-24 lg:justify-center ">
+    <main className=" flex flex-col gap-2 px-6 pt- sm:p-12 sm:p-24  md:px-[10%] lg:my-24 lg:justify-center ">
       <FormHeader
         headerText=" learning paths based on your answers"
         headerDescription="choose one to get started. You can switch anytime."

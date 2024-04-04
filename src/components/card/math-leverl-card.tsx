@@ -22,10 +22,10 @@ const MathLevelCard = ({
       )}
       onClick={() => handleClick(name)}
     >
-      <div className="smb-4 md:mb-6 md:text-xl">{formula}</div>
+      <div className="smb-4 md:mb-4">{formula}</div>
       <div className="text-center">
         <p className="capitalize text-sm lg:text-base mb-1 ">{name}</p>
-        <p className="capitalize text-gray-500 text-base sm:text-lg  text-center ">
+        <p className="capitalize text-gray-500 text-base md:text-lg  text-center ">
           {description}
         </p>
       </div>
