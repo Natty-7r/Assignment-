@@ -30,7 +30,7 @@ const InterestsPage = () => {
         headerDescription=" choose just one. This will help us get you started   (but won't limit your experience)."
       />
 
-      <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-3 sm:gap-4 my-3 sm:my-4 sm:w-4/5 lg:w-3/5 max-h-[62vh] md:max-h-[62vh]">
+      <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-3  my-3 sm:my-4 sm:w-4/5 lg:w-3/5 max-h-[62vh] md:max-h-[62vh]">
         {interestList.map(({ type, iconString }, index: number) => (
           <OptionCard
             key={index}

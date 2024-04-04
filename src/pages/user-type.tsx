@@ -27,7 +27,7 @@ const UserTypePage = () => {
         headerDescription=" this will help us personize your expreience."
       />
 
-      <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-2 sm:gap-4 md:gap-3  my-4 md:my-2  sm:w-4/5 lg:w-3/5 max-h-[60vh] md:max-h-[66vh]">
+      <div className="flex flex-col mx-auto   overflow-y-auto hideable_thin_scrollbar gap-2  md:gap-3  my-4 md:my-2  sm:w-4/5 lg:w-3/5 max-h-[60vh] md:max-h-[66vh]">
         {userTypes.map(({ type, description, iconString }, index: number) => (
           <OptionCard
             key={index}

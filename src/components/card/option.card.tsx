@@ -11,7 +11,7 @@ const OptionCard = ({
   return (
     <Card
       className={cn(
-        "flex items-center  rounded gap-4  p-3 sm:py-4  md:gap-6 xl:p-5 border-gray-100 hover:shadow-lg ",
+        "flex items-center  rounded gap-4  p-3 sm:py-4  md:gap-6 xl:p-5 border-gray-100 hover:shadow ",
         selectedValue && selectedValue == title && "border-yellow-600 shadow-lg"
       )}
       onClick={() => handleClick(title)}
