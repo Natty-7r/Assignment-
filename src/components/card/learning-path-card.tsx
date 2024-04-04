@@ -13,7 +13,7 @@ const LearnPathCard = ({
   return (
     <Card
       className={cn(
-        "relative flex w-full lg:w-[45%]  items-center p-4  lg:px-4 lg:py-8",
+        "relative flex w-full lg:w-[45%]  items-center p-4  lg:px-4 lg:py-8 hover:shadow-lg",
         id && id == selctedId && "border-yellow-600 shadow-lg"
       )}
       onClick={() => clickHandler(id)}
