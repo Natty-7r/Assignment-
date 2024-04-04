@@ -23,7 +23,7 @@ const InterestsPage = () => {
   };
 
   return (
-    <main className=" flex flex-col gap-2 py-8 px-6  sm:p-12 md:px-[15%] ">
+    <main className=" flex flex-col  py-8 px-6  sm:p-12 md:px-[15%] ">
       <FormProgress />
       <FormHeader
         headerText=" which are you most intereseted in?"

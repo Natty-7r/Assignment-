@@ -10,7 +10,7 @@ export const getMathimaticalExpressions = (level: string): React.ReactNode => {
 
     case "intermediate algebra":
       return (
-        <MathJaxFormula formula="$$\frac{{-b \pm \sqrt{{b^2 - 4ac}}}}{{2a}}$$" />
+        <MathJaxFormula formula="$$x = \frac{{-b \pm \sqrt{{b^2 - 4ac}}}}{{2a}}$$" />
       );
 
     case "arithmetic":

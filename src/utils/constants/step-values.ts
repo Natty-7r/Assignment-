@@ -44,7 +44,7 @@ export const interestList: Interest[] = [
 export const mathLevels: MathLevelType[] = [
   {
     name: "arithmetic",
-    description: "introuductory",
+    description: "introductory",
     formula: getMathimaticalExpressions("arithmetic"),
   },
   {
