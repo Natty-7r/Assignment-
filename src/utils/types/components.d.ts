@@ -19,7 +19,7 @@ type LearnPathCardProps = {
 type MathLevelCardProps = {
   name: string;
   description: string;
-  preview: string;
+  formula: React.ReactNode;
   handleClick: Function;
   selectedValue?: string;
 };

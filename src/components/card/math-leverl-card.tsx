@@ -1,13 +1,19 @@
 import { cn } from "@/lib/utils";
 import { Card } from "../ui/card";
+import { useEffect, useState } from "react";
 
 const MathLevelCard = ({
   name,
   description,
-  preview,
+  formula,
   handleClick,
   selectedValue,
 }: MathLevelCardProps) => {
+  const [_, setRelaod] = useState(false);
+
+  useEffect(() => {
+    setRelaod(true);
+  }, []);
   return (
     <Card
       className={cn(
@@ -16,9 +22,9 @@ const MathLevelCard = ({
       )}
       onClick={() => handleClick(name)}
     >
-      <p className="mb-4 md:mb-6 md:text-xl">{preview}</p>
+      <div className="smb-4 md:mb-6 md:text-xl">{formula}</div>
       <div className="text-center">
-        <p className="capitalize text-sm lg:text-base ">{name}</p>
+        <p className="capitalize text-sm lg:text-base mb-1 ">{name}</p>
         <p className="capitalize text-gray-500 text-base sm:text-lg  text-center ">
           {description}
         </p>

@@ -9,7 +9,7 @@ type Interest = { type: string; iconString: string };
 type MathLevelType = {
   name: string;
   description: string;
-  preview: any;
+  formula: React.ReactNode;
 };
 type LearningPath = {
   id: string;
