@@ -12,7 +12,7 @@ const ProgressTwoPage = () => {
     navigate("/learning-path");
   };
   return (
-    <main className=" flex flex-col gap-2  py-8 px-6 sm:p-12 md:px-[15%] ">
+    <main className=" flex flex-col   py-8 px-6 sm:p-12 md:px-[15%] ">
       <FormProgress />
       <div className="flex flex-col md:my-12 md:flex-row mx-auto items-center justify-around md:gap-[5%] ">
         <div className="aspect-[2/3]  relative  w-1/4 md:w-[20%] my-12">

@@ -6,7 +6,7 @@ const FormHeader = ({
   headerDescription,
 }: FormHeaderProps) => {
   return (
-    <header className={cn("text-center", className)}>
+    <header className={cn("text-center mb-2 xl:mb-6", className)}>
       <h1 className=" first-letter:uppercase font-bold  md:mb-2  text-xl md:text-3xl">
         {headerText}
       </h1>
